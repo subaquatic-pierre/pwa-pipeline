@@ -32,7 +32,7 @@ const MenuAppBar = () => {
             <MenuIcon onClick={() => { handleClick() }} />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Awesome PWA
+            Gatsby Pipeline
           </Typography>
         </Toolbar>
       </AppBar>

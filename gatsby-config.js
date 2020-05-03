@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby PWA Pipeline`,
+    title: `Gatsby Pipeline`,
     author: {
       name: `Pierre du Toit`,
       summary: `Awesome single page web application pipeline powered by AWS`,
