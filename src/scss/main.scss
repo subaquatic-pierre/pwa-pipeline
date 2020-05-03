@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+@import "./components/main.scss";
+@import "./pages/main.scss";
