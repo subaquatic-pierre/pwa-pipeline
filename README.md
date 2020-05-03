@@ -15,7 +15,7 @@ This template creates a fully automated Gatsby.js pipeline, hosted on AWS S3 ser
 ### You should already have following (if not follow the how to's):
 
 - Route 53 Hosted Domain
-- SSL Certificate ARN (AWS Certificate Manager)
+- :rotating_light: SSL Certificate ARN (AWS Certificate Manager) :rotating_light: Certificate must be in the _US East (N. Virginia)us-east-1_ region
 - GitHub OAuth Token
 
 #### [How to's](#how-to)
