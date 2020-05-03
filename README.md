@@ -6,17 +6,17 @@ This template creates a fully automated Gatsby.js pipeline, hosted on AWS S3 ser
 
 ### Main Features
 
-- Static application hosted on AWS S3
-- Application served on a worldwide CDN with AWS CloudFront
-- Secure connection with SSL certificate on AWS Route 53
-- Redirect all http://www.domain.com traffic to https://domain.com
-- AWS CodePipeline which automates application deployment
+:star: Static application hosted on AWS S3
+:star: Application served on a worldwide CDN with AWS CloudFront
+:star: Secure connection with SSL certificate on AWS Route 53
+:star: Redirect all http://www.domain.com traffic to https://domain.com
+:star: AWS CodePipeline which automates application deployment
 
 ### You should already have following (if not follow the how to's):
 
-- Route 53 Hosted Domain
-- :rotating_light: SSL Certificate ARN (AWS Certificate Manager) :rotating_light: Certificate must be in the _US East (N. Virginia)us-east-1_ region
-- GitHub OAuth Token
+:warning: Route 53 Hosted Domain
+:rotating_light: SSL Certificate ARN (AWS Certificate Manager) - the certificate must be in the **US East (N. Virginia)us-east-1** region
+:warning: itHub OAuth Token
 
 #### [How to's](#how-to)
 
