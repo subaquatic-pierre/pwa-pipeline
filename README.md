@@ -4,11 +4,7 @@
 
 This template creates a fully automated Gatsby.js pipeline, hosted on AWS S3 served over CloudFront CDN. The application is accessible over a secure SSL connection with your hostname.
 
-The stack includes all resources needed to build and deploy a Gatsby application to an S3 bucket. _Do not include the public directory in your repo_
-
-This is an excellent stack if you want to be able to modify your application in a development environment, push it to a repo and have the application automatically propagate through a global CDN in the production environment. Any changes made to the bucket take about 15 minutes to propagate through the CloudFront CDN. This is a fully automated SPA pipeline.
-
-**Main Features**
+### Main Features
 
 - Static application hosted on AWS S3
 - Application served on Worldwide CDN with AWS CloudFront
@@ -16,17 +12,23 @@ This is an excellent stack if you want to be able to modify your application in 
 - Redirect all http://www.domain.com traffic to https://domain.com
 - AWS PipeLine which automates application deployment
 
-If you do not have a Gatsby application yet, clone the repo below to get started.
-
-    git clone git@github.com:subaquatic-pierre/gatsby-pipeline-app.git
-
-This Stack presumes you have the following (if not follow the how to's):
+### You should already have following (if not follow the how to's):
 
 - Route 53 Hosted Domain
 - SSL Certificate ARN (AWS Certificate Manager)
 - GitHub OAuth Token
 
-The following resources will be created
+**Note**:
+
+Do not include the public directory in the repo
+
+## Launch the stack
+
+If you have all the resource needed, launch the stack below:
+
+[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=buildkite&templateURL=https://s3.amazonaws.com/my-great-stack.json)
+
+### The following resources will be created
 
 - S3 Bucket - Main Site
 - S3 Bucket - Redirect www to non-www
@@ -38,11 +40,9 @@ The following resources will be created
 - Route53 Record Sets
 - IAM Roles and Policies
 
-## Launch the stack
+If you do not have a Gatsby application yet, clone the repo below to get started.
 
-If you have all the resource needed, launch the stack below:
-
-[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=buildkite&templateURL=https://s3.amazonaws.com/my-great-stack.json)
+    git clone git@github.com:subaquatic-pierre/gatsby-pipeline-app.git
 
 ## How to's:
 
