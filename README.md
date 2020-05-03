@@ -1,0 +1,114 @@
+# Single Page Application Pipeline
+
+## Overview
+
+This template creates a fully automated Gatsby.js pipeline, hosted on AWS S3 served over CloudFront CDN. The application is accessible over a secure SSL connection with your hostname.
+
+The stack includes all resources needed to build and deploy a Gatsby application to an S3 bucket. _Do not include the public directory in your repo_
+
+This is an excellent stack if you want to be able to modify your application in a development environment, push it to a repo and have the application automatically propagate through a global CDN in the production environment. Any changes made to the bucket take about 15 minutes to propagate through the CloudFront CDN. This is a fully automated SPA pipeline.
+
+**Main Features**
+
+- Static application hosted on AWS S3
+- Application served on Worldwide CDN with AWS CloudFront
+- Secure connection with SSL certificate on AWS Route 53
+- Redirect all http://www.domain.com traffic to https://domain.com
+- AWS PipeLine which automates application deployment
+
+If you do not have a Gatsby application yet, clone the repo below to get started.
+
+    git clone git@github.com:subaquatic-pierre/gatsby-pipeline-app.git
+
+This Stack presumes you have the following (if not follow the how to's):
+
+- Route 53 Hosted Domain
+- SSL Certificate ARN (AWS Certificate Manager)
+- GitHub OAuth Token
+
+The following resources will be created
+
+- S3 Bucket - Main Site
+- S3 Bucket - Redirect www to non-www
+- S3 Bucket - Pipeline bucket
+- CloudFront CDN
+- Route 53 Record set - Both root domain and www subdomain
+- CloudFront CDN
+- CodePipeline
+- Route53 Record Sets
+- IAM Roles and Policies
+
+## Launch the stack
+
+If you have all the resource needed, launch the stack below:
+
+[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=buildkite&templateURL=https://s3.amazonaws.com/my-great-stack.json)
+
+## How to's:
+
+- [Route 53 hosted Domain](#route-53)
+- [SSL Certificate associated with that domain](#ssl-certificate)
+- [GitHub repository which contains a gatsby website](#repo)
+- [GitHub OAuth Token](#github-oauth-token)
+
+### Route 53
+
+Create a hosted domain in Route53
+
+[https://console.aws.amazon.com/route53](https://console.aws.amazon.com/route53)
+
+1. If you don't already have a domain registered with another registrar, you will first need to register a domain. This can be done in the main Route53 dashboard, it can take up to 24 hours for domain to be active
+2. If you have a domain hosted with another registrar, click on "Hosted zones" on the sidebar
+3. Click create hosted zones - you will then have a hosted zone with 2 record sets, NS and SOA records
+4. If you have a domain registered with another registrar, add AWS NS servers to current hosted domain, depending on provider you will have to follow their instructions to point your domain to AWS Route 53
+
+### SSL Certificate
+
+Create an SSL certificate, follow the link to the Certificate Manager Console
+
+[https://console.aws.amazon.com/acm](https://console.aws.amazon.com/acm)
+
+Note: **Be sure to create the certificate within "US East (N. Virginia) us-east-1"**
+
+1. Change region to **US East (N. Virginia) us-east-1**
+2. Click -> "Request a certificate"
+3. Check -> "Request a public certificate" and then Click -> "Request a certificate"
+4. Enter -> "myexampledomain.com"
+5. Click -> "Add another name to this certificate"
+6. Enter -> "www.myexampledomain.com" and then Click -> "Next"
+7. Check -> "DNS validation" and Click -> "Next"
+8. Click -> "Review" and then Click -> "Confirm and request"
+
+Once the certificates are created you will need to add them to the Route53 hosted zone. There are a few ways to do it, the easiest way is to click "Create record in Route 53" under each domain name. This will automatically add the CNAME record to your hosted zone.
+
+Once the certificates are added to your hosted zone, wait a few minutes for the certificates to validate and then click "Continue".
+
+After the certificates are validated, copy the ARN number of the certificate. This will be used as input for the CloudFormation template.
+
+**Copy the ARN of the certificate**
+
+![Certificate ARN](cfstack/certificate_ARN.png)
+
+### GitHub
+
+#### Repo
+
+Clone this repo if you don't already have a Gatsby site
+
+    git clone git@github.com:subaquatic-pierre/gatsby-pipeline-app.git
+
+_or_
+
+Create a new Gatsby app with the gatsby CLI and upload it to your own repo
+
+    gatsby new gatsby-site
+
+#### GitHub OAuth Token
+
+You can access your Github tokens with the below link
+
+https://github.com/settings/tokens
+
+or check this help page for more info
+
+https://help.github.com/en/enterprise/2.17/user/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line
