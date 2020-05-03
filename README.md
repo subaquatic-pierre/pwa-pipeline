@@ -10,7 +10,7 @@ This template creates a fully automated Gatsby.js pipeline, hosted on AWS S3 ser
 - Application served on a worldwide CDN with AWS CloudFront
 - Secure connection with SSL certificate on AWS Route 53
 - Redirect all http://www.domain.com traffic to https://domain.com
-- AWS PipeLine which automates application deployment
+- AWS CodePipeline which automates application deployment
 
 ### You should already have following (if not follow the how to's):
 
