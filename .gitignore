@@ -57,7 +57,3 @@ typings/
 # gatsby files
 .cache/
 public/
-
-# Cloud stack
-
-cf-stack.yaml
