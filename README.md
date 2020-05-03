@@ -18,7 +18,7 @@ This template creates a fully automated Gatsby.js pipeline, hosted on AWS S3 ser
 - SSL Certificate ARN (AWS Certificate Manager)
 - GitHub OAuth Token
 
-[how to's](#how-to's)
+_[How to's](#how-to's)_
 
 **Note**:
 
