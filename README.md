@@ -7,7 +7,7 @@ This template creates a fully automated Gatsby.js pipeline, hosted on AWS S3 ser
 ### Main Features
 
 - Static application hosted on AWS S3
-- Application served on Worldwide CDN with AWS CloudFront
+- Application served on a worldwide CDN with AWS CloudFront
 - Secure connection with SSL certificate on AWS Route 53
 - Redirect all http://www.domain.com traffic to https://domain.com
 - AWS PipeLine which automates application deployment
@@ -17,6 +17,8 @@ This template creates a fully automated Gatsby.js pipeline, hosted on AWS S3 ser
 - Route 53 Hosted Domain
 - SSL Certificate ARN (AWS Certificate Manager)
 - GitHub OAuth Token
+
+[how to's](#how-to's)
 
 **Note**:
 
@@ -40,7 +42,7 @@ If you have all the resource needed, launch the stack below:
 - Route53 Record Sets
 - IAM Roles and Policies
 
-If you do not have a Gatsby application yet, clone the repo below to get started.
+If you do not have a Gatsby application, clone this repo
 
     git clone git@github.com:subaquatic-pierre/gatsby-pipeline-app.git
 
