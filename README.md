@@ -6,7 +6,7 @@ This template creates a fully automated Gatsby.js pipeline, hosted on AWS S3 ser
 
 ### Main Features
 
-- :star: Static application hosted on AWS S3
+- :star: Progressive Web Application application hosted on AWS S3
 - :star: Application served on a worldwide CDN with AWS CloudFront
 - :star: Secure connection with SSL certificate on AWS Route 53
 - :star: Redirect all http://www.domain.com traffic to https://domain.com
@@ -16,7 +16,7 @@ This template creates a fully automated Gatsby.js pipeline, hosted on AWS S3 ser
 
 - :warning: Route 53 Hosted Domain
 - :rotating_light: SSL Certificate ARN (AWS Certificate Manager) - the certificate must be in the **US East (N. Virginia)us-east-1** region
-- :warning: itHub OAuth Token
+- :warning: GitHub OAuth Token
 
 #### [How to's](#how-to)
 
