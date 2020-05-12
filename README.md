@@ -28,7 +28,7 @@ Do not include the public directory in the repo
 
 If you have all the resource needed, launch the stack below (I suggest right click and open it in a new tab):
 
-[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=gatsby-pipeline&templateURL=https://pwa-pipeline-cftemplate.s3.us-east-2.amazonaws.com/cf-stack.yaml)
+[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=pwa-pipeline&templateURL=https://pwa-pipeline-cftemplate.s3.us-east-2.amazonaws.com/cf-stack.yaml)
 
 ### The following resources will be created
 
