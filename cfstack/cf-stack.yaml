@@ -9,10 +9,9 @@ Description: >-
 Parameters:
   GitHubUser:
     Type: String
-    Description: GitHub User
   GitHubRepo:
     Type: String
-    Description: GitHub Repo to pull from. Only the Name. not the URL
+    Description: Name of the GitHub repo. Only the name not the full URL
     Default: pwa-pipeline
   GitHubBranch:
     Type: String
@@ -21,19 +20,51 @@ Parameters:
   GitHubToken:
     NoEcho: true
     Type: String
-    Description: Secret OAuthToken with access to Repo. Go to https://github.com/settings/tokens
+    Description: Secret GitHub OAuthToken. Go to https://github.com/settings/tokens
   HostedZone:
     Type: String
-    Description: The DNS name of an existing Amazon Route 53 hosted zone
+    Description: DNS name of an existing Amazon Route 53 hosted zone
     AllowedPattern: "(?!-)[a-zA-Z0-9-.]{1,63}(?<!-)"
     ConstraintDescription: Must be a valid DNS zone name.
   HostedZoneId:
     Type: AWS::Route53::HostedZone::Id
-    Description: Hosted Zone id for the Hosted Zone you're setting up, of the form 'Z23YXV4OVPL04A'
+    Description: Hosted Zone ID. eg - Z23YXV4OVPL04A
     ConstraintDescription: must be a valid Hosted Zone ID
   CertificateARN:
     Type: String
-    Description: Go to https://console.aws.amazon.com/acm - eg. 'arn:aws:acm:us-east-2:658695364897:certificate/56fe4395-3c66-3044-tikl-a159e362g50q'
+    Description: eg - arn:aws:acm:us-east-2:658695364897:certificate/56fe4395-3c66-3044-tikl-a159e362g50q. Go to https://console.aws.amazon.com/acm
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: "Site Configuration"
+        Parameters:
+          - HostedZone
+          - HostedZoneId
+          - CertificateARN
+      - Label:
+          default: "GitHub Configuration"
+        Parameters:
+          - GitHubToken
+          - GitHubUser
+          - GitHubRepo
+          - GitHubBranch
+    ParameterLabels:
+      HostedZone:
+        default: Hosted Zone
+      HostedZoneId:
+        default: Hosted Zone ID
+      CertificateARN:
+        default: Certificate ARN
+      GitHubToken:
+        default: GitHub OAuth2 Token
+      GitHubUser:
+        default: GitHub Username
+      GitHubRepo:
+        default: GitHub Repository Name
+      GitHubBranch:
+        default: GitHub Branch Name
 
 Mappings:
   RegionToS3ZoneId:
@@ -94,38 +125,6 @@ Mappings:
     sa-east-1:
       ZoneId: Z7KQH4QJS55SO
       Endpoint: .s3-website-sa-east-1.amazonaws.com
-
-Metadata:
-  AWS::CloudFormation::Interface:
-    ParameterGroups:
-      - Label:
-          default: "Site Configuration"
-        Parameters:
-          - HostedZone
-          - HostedZoneId
-          - CertificateARN
-      - Label:
-          default: "GitHub Configuration"
-        Parameters:
-          - GitHubToken
-          - GitHubUser
-          - GitHubRepo
-          - GitHubBranch
-    ParameterLabels:
-      HostedZone:
-        default: Name of the hosted zone for the S3 bucket
-      HostedZoneId:
-        default: ID for the hosted zone
-      CertificateARN:
-        default: ARN for the certificate of hosted zone
-      GitHubToken:
-        default: GitHub OAuth2 Token
-      GitHubUser:
-        default: GitHub User Name
-      GitHubRepo:
-        default: GitHub Repository Name
-      GitHubBranch:
-        default: GitHub Branch Name
 
 Resources:
   SiteBucket:
