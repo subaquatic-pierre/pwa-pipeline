@@ -10,11 +10,10 @@ Parameters:
   GitHubUser:
     Type: String
     Description: GitHub User
-    Default: "subaquatic-pierre"
   GitHubRepo:
     Type: String
     Description: GitHub Repo to pull from. Only the Name. not the URL
-    Default: gatsby-pipeline-app
+    Default: pwa-pipeline
   GitHubBranch:
     Type: String
     Description: GitHub Branch
@@ -22,7 +21,6 @@ Parameters:
   GitHubToken:
     NoEcho: true
     Type: String
-    Default: token
     Description: Secret OAuthToken with access to Repo. Go to https://github.com/settings/tokens
   HostedZone:
     Type: String
