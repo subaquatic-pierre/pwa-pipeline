@@ -1,4 +1,4 @@
-# Single Page Application Pipeline
+# Progressive Web Application Pipeline
 
 ## Overview
 
@@ -28,7 +28,7 @@ Do not include the public directory in the repo
 
 If you have all the resource needed, launch the stack below:
 
-[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=gatsby-pipeline&templateURL=https://gatsby-pipeline-app-template.s3.us-east-2.amazonaws.com/cf-stack.yaml)
+[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=gatsby-pipeline&templateURL=https://gatsby-pipeline-app-template.s3.us-east-2.amazonaws.com/cf-stack.yaml){:target="\_blank"}
 
 ### The following resources will be created
 
