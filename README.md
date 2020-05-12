@@ -28,7 +28,7 @@ Do not include the public directory in the repo
 
 If you have all the resource needed, launch the stack below:
 
-<a href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=gatsby-pipeline&templateURL=https://gatsby-pipeline-app-template.s3.us-east-2.amazonaws.com/cf-stack.yaml" target="_blank">[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)]</a>
+<a href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=gatsby-pipeline&templateURL=https://gatsby-pipeline-app-template.s3.us-east-2.amazonaws.com/cf-stack.yaml" target="blank">![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)</a>
 
 ### The following resources will be created
 
